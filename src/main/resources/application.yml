@@ -1,0 +1,46 @@
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/redit?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: root
+    password: 12121212
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        default_batch_fetch_size: 1000
+        use_sql_comments: true
+        format_sql: true
+        show_sql: true
+    open-in-view: false
+
+  #prifile 설정 프로젝트에서 따로 입력해줘여됨
+  #  config:
+  #    activate:
+  #      on-profile: dev
+  #pageable 설정
+  data:
+    web:
+      pageable:
+        default-page-size: 100
+        max-page-size: 2000
+
+
+#로그 debug
+logging.level:
+  org.hibernate.SQL: debug
+  org:
+    hibernate:
+      type:
+        descriptor:
+          sql: trace
+
+#로깅 파일
+#logging:
+#  file:
+#    name: ./logs/log.log
+#org.hibernate.type: trace
