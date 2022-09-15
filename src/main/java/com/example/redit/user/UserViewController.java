@@ -23,7 +23,7 @@ public class UserViewController {
     }
 
 
-    @GetMapping("/posts/{userId}")
+    @GetMapping("/user/{userId}")
     public ResponseEntity<?> post(@PathVariable Long userId) {
         List<Post> postList = userRepository.getPostList(userId);
         return ResponseEntity.ok(postList);
