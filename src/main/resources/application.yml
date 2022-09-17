@@ -3,11 +3,11 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/redit?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
     username: root
-    password: 12121212
+    password: 1234
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     properties:
@@ -44,3 +44,9 @@ logging.level:
 #  file:
 #    name: ./logs/log.log
 #org.hibernate.type: trace
+
+
+jwt:
+  token:
+    secretKey: dgj0938aWEFPH234D8F2HFOWEFH2J3220Q2938RHQ098
+    expiration_time: 259200
